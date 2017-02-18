@@ -33,7 +33,12 @@ class characterStats: #specify's dandilions abilty scores and creates values for
 		'VICIOUS MOCKERY': ['instant spell range 60ft, insult a creature, if it fails a wis save throw it takes 2D4 psychic damage and takes disadvange on next attak roll before the end of the next turn.' 'cantrip'],
 		'CURE WOUNDS': ['instant touch, creature i touch gets hit points equal to 1D8 plus spell casting mod, increases by 1D8 per slot level.' '1st level'],
 		'TASHAS HIDEOUS LAUGHTER': ['conentration 1 min, 30 ft range, a creature of choice percieves anything hilariously funn and falls, mus succeed on a wisdom save or fall prone, does not effect if has 4 or less intelligence,' '1st level'],
-		'THUNDER WAVE': ['instant spell self(15ft cube), all creatures in cube make a con save throw, takes 2D8 and is pushed 10ft, save takes half and is not pushed. increase 1D8 for each level above 1st,' '1st level,'] 
+		'THUNDER WAVE': ['instant spell self(15ft cube), all creatures in cube make a con save throw, takes 2D8 and is pushed 10ft, save takes half and is not pushed. increase 1D8 for each level above 1st,' '1st level,'],
+		'PHANTASMAL FORCE': ['concentration 1 min range 60ft, a creature in range sees an illusion, must make int check, target can use action to investigate against spell dc. if target is is within 5ft of illusion, spell deals 1D6 psychic damage,' '2nd level'],
+		'SHATTER': ['instant spell range 60ft, 10ft raidus sphere centere on point within range, each creature makes con save throw, if failed takes 3D8 thunder damage, half on succes save, inorganic creatures take disadvange on throw,' '2nd level'],
+		'SUGGESTION': ['concentration up to 8 hours, range 30ft up to 2 sentences suggest a course of activity, if the creature hurts itself it ends the spell,' '2nd level'],
+		'BESTOW COURSE': ['concentration up to 1 min on touch, touched creature takes wis save throw or becom cursed for duration of the spell, check page 218 for all posibilities,' '3rd level'],
+		'STINKING CLOUD':['concentration up to 1 min range 90ft, creates a 20ft sphere of yellow nauseating gas centered on a point in range. spreads around corners. each creature if in cloud makes a con save against poison if failed takes turn retching and reeling,' '3rd level'] 
 		}
 
 
@@ -80,7 +85,7 @@ for each in [Char, DanDLion]:
     print(each.name)
     print(each.attack('melee'))
     print(each.attack('spell'))
-    print(each.attack('weapon'), '\n')
+    print(each.attack('weapon'))  
 
 
 #this for statement takes the skill dictionary prints out the skills and the modifier for each skill
