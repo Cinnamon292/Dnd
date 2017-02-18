@@ -8,7 +8,7 @@ class characterStats: #specify's dandilions abilty scores and creates values for
         self.wisdom = wis
         self.charisma = cha
         self.prof = 3
-	self.spellcastAbility = 8 + cha 
+        self.spellcastAbility = 8 + self.mod('cha')
         self.SD = {'Acrobatics':['dex', False], #Dictionary for  functions to pull up skills and if Dandlion is trained
             'Animal Handling': ['wis', False],  # in them or not
              'Arcana': ['int', False],
@@ -28,7 +28,7 @@ class characterStats: #specify's dandilions abilty scores and creates values for
               'Survival': ['wis', False]
             }
 	#Dicionary for spell. tells the spell its level and its abilty
-	self.Spells= {'cure wounds':['Instantaneous spell at touch range. "a creature i touch regains a number of hit points = to 1D8 + my spell casting ability modifier. Increase by 1D8 for each slot level above 1st"', '1st level spell'], 
+	self.spells= {'cure wounds':['Instantaneous spell at touch range. "a creature i touch regains a number of hit points = to 1D8 + my spell casting ability modifier. Increase by 1D8 for each slot level above 1st"', '1st level spell'], 
 	'Shatter': ['Instantaneous spell with range of 60ft.', 'A sudden loud ringing noise erupts from a point of my choice within range. each creature in a 10ft radius shpere centered at point must make a constitution saving throw. takes 3D8 thunder damage or half on a succesfull throw']
 	    }
 
@@ -88,9 +88,10 @@ for k in (DanDLion.SD):
     print(k, x)
 
 #this statement looks at the spell dictionary prints out the spells, the level of the spell and the spells ability.
-for k in (DandDLion.spells):
-	s = DandDLion.spells[k]
-	x = DandDLion.mod(s[0])
-	print(k,x, DanDLion.spellcastingAbility + DanDLion.prof
-
-
+for k in (DanDLion.spells):
+	s = DanDLion.spells[k]
+	x = s[0]
+	print(k,x, DanDLion.spellcastAbility)
+	
+	
+	
