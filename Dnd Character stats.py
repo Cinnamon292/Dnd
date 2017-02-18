@@ -28,9 +28,13 @@ class characterStats: #specify's dandilions abilty scores and creates values for
               'Survival': ['wis', False]
             }
 	#Dicionary for spell. tells the spell its level and its abilty
-	self.spells= {'cure wounds':['Instantaneous spell at touch range. "a creature i touch regains a number of hit points = to 1D8 + my spell casting ability modifier. Increase by 1D8 for each slot level above 1st"', '1st level spell'], 
-	'Shatter': ['Instantaneous spell with range of 60ft.', 'A sudden loud ringing noise erupts from a point of my choice within range. each creature in a 10ft radius shpere centered at point must make a constitution saving throw. takes 3D8 thunder damage or half on a succesfull throw']
-	    }
+	self.spells= {'FRIENDS': ['Concentration, i have advantage on al cha checks on creature of my choice. creature realizes when spell ends and becomes hostile towards me' 'cantrip'],
+		'LIGHT':['touch range, object sheds light in a 20ft radius. if on creature, must make a dex save throw' 'cantrip'],
+		'VICIOUS MOCKERY': ['instant spell range 60ft, insult a creature, if it fails a wis save throw it takes 2D4 psychic damage and takes disadvange on next attak roll before the end of the next turn.' 'cantrip'],
+		'CURE WOUNDS': ['instant touch, creature i touch gets hit points equal to 1D8 plus spell casting mod, increases by 1D8 per slot level.' '1st level'],
+		'TASHAS HIDEOUS LAUGHTER': ['conentration 1 min, 30 ft range, a creature of choice percieves anything hilariously funn and falls, mus succeed on a wisdom save or fall prone, does not effect if has 4 or less intelligence,' '1st level'],
+		'THUNDER WAVE': ['instant spell self(15ft cube), all creatures in cube make a con save throw, takes 2D8 and is pushed 10ft, save takes half and is not pushed. increase 1D8 for each level above 1st,' '1st level,'] 
+		}
 
 
     def mod(self, a): #function that uses the values from the class and creates the ability modifier
@@ -43,7 +47,7 @@ class characterStats: #specify's dandilions abilty scores and creates values for
         if a == 'int':
             return((self.intelligence -10)//2)
         if a == 'wis':
-            return((self.wisdom -10)//2)
+		    return((self.wisdom -10)//2)
         if a == 'cha':
             return((self.charisma -10)//2)
 
@@ -91,7 +95,7 @@ for k in (DanDLion.SD):
 for k in (DanDLion.spells):
 	s = DanDLion.spells[k]
 	x = s[0]
-	print(k,x, DanDLion.spellcastAbility)
+	print(k,x, DanDLion.spellcastAbility + DanDLion.prof)
 	
 	
 	
