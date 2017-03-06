@@ -46,7 +46,7 @@ class characterStats: #specify's dandilions abilty scores and creates values for
             }
 
 
-    def mod(self, a: object) -> object: #function that uses the values from the class and creates the ability modifier
+    def mod(self, a): #function that uses the values from the class and creates the ability modifier
         if a == 'str':
             return((self.strength -10)//2)
         if a == 'dex':
@@ -77,13 +77,22 @@ while exit != True:
             x = DanDLion.mod(s[0])
             if DanDLion.SD[k][1]:
                 x += DanDLion.prof
-            print(k, x + DanDLion.jackofalltrades)
+            print(k, x)
     if command ==('Spells'): #if commmanded spell then will print the spells with the spell level
         for k in (DanDLion.spells):
             s = DanDLion.spells[k]
             x = s[0]
             print(k, x, DanDLion.spellcastAbility + DanDLion.prof)
     if command ==('basic attack'):
-        print('1D8 Bludgeoning')
+        print('1D8 Bludgeoning',) #needs to add strength mod to damage 
     if command ==('speech'):
         print(DanDLion.languages)
+        
+make a health tracker
+add armor class (leatheur ammor is 11 + dex, initiatve, and speed 
+correctly add jack of all trades to skills
+
+#need to make health tracker instead of using calculator
+#need to imput speed amour class and inititive 
+#need to make it so commands also ask for what the dice role was
+
