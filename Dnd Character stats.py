@@ -9,7 +9,6 @@ class characterStats: #specify's dandilions abilty scores and creates values for
         self.charisma = cha
         self.prof = 3
         self.spellcastAbility = 8 + self.mod('cha')
-        self.jackofalltrades = 2
         self.SD = {'Acrobatics':['dex', False], #Dictionary for  functions to pull up skills and if Dandlion is trained
             'Animal Handling': ['wis', False],  # in them or not
              'Arcana': ['int', False],
@@ -76,7 +75,9 @@ while exit != True:
             s = DanDLion.SD[k]
             x = DanDLion.mod(s[0])
             if DanDLion.SD[k][1]:
-                x += DanDLion.prof
+                x += DanDLion.prof #if trained then profincience bonus is added
+            else:
+                x += DanDLion.prof // 2 #if not trained in skill jack of all trades is added instead of profinacy
             print(k, x)
     if command ==('Spells'): #if commmanded spell then will print the spells with the spell level
         for k in (DanDLion.spells):
@@ -88,11 +89,8 @@ while exit != True:
     if command ==('speech'):
         print(DanDLion.languages)
         
-make a health tracker
-add armor class (leatheur ammor is 11 + dex, initiatve, and speed 
-correctly add jack of all trades to skills
-
 #need to make health tracker instead of using calculator
-#need to imput speed amour class and inititive 
+#need to imput speed amour class and inititive (find out what causes the stats to be what they are so number changes are minamal
 #need to make it so commands also ask for what the dice role was
-
+#get the help command to actually work
+#get both the skills and spells to be alphabetical
